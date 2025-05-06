@@ -1,0 +1,18 @@
+version: 2.1
+
+orbs:
+  macos: circleci/macos@2.5.2
+
+jobs:
+  job:
+    macos:
+      xcode: "13.4.1"
+    resource_class: "macos.m1.medium.gen1"
+    steps:
+      - macos/enable-vnc
+
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - job
